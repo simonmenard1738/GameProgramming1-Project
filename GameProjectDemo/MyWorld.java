@@ -9,7 +9,7 @@ public class MyWorld extends World
 {
 
     /* (World, Actor, GreenfootImage, Greenfoot and MouseInfo)*/
-
+    // fake code
     /**
      * Constructor for objects of class MyWorld.
      */
