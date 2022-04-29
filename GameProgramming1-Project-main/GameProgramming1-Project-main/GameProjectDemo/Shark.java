@@ -15,23 +15,27 @@ public class Shark extends Actor
      */
     public void act()
     {
-        attack();
+        move();
+        
+        
         /* Add your action code here.*/
     }
 
     /**
      * 
      */
-    public void attack()
+    public void move()
     {
         setRotation(90);
-        move(4);
-        
-        Actor submarine = getOneIntersectingObject(Submarine.class);
-        if(submarine!=null){
-            MyWorld world = (MyWorld) getWorld();
-            world.decreaseHealth();
+        move(3);
+        if(isAtEdge()==true){
+            getWorld().removeObject(this);
+                       
         }
+        
     }
     
-}
+       }
+    
+    
+
