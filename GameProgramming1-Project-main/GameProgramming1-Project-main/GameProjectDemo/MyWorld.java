@@ -11,7 +11,8 @@ public class MyWorld extends World
     /* (World, Actor, GreenfootImage, Greenfoot and MouseInfo)*/
     // fake code
     double startTime = System.currentTimeMillis();
-    int count = 40;
+    int counter = 0;
+    private int health = 3;
     /**
      * Constructor for objects of class MyWorld.
      */
@@ -19,13 +20,21 @@ public class MyWorld extends World
     {
         super(400, 600, 1);
         prepare();
+            
+        act();
         
     }
     
     public void act(){
         Display display = new Display();
+        addObject(display,300,50);
         int timerValue = (int) (System.currentTimeMillis() - startTime)/1000;
-        display.setImage(new GreenfootImage("Timer Value :" + timerValue , 35, Color.BLACK, Color.BLACK, Color.YELLOW));
+        display.setImage(new GreenfootImage("Timer Value :" + timerValue , 20, Color.BLACK, Color.BLACK, Color.YELLOW));
+        
+        Display display2 = new Display();
+        addObject(display2,100, 50);
+        display2.setImage(new GreenfootImage("Lives: " + health, 20,Color.BLACK, Color.BLACK, Color.YELLOW));
+        
     }
 
     /**
@@ -33,18 +42,24 @@ public class MyWorld extends World
      * That is: create the initial objects and add them to the world.
      */
     private void prepare()
-    {
-        int value = Greenfoot.getRandomNumber(4);
-        int[] locations = {50, 150, 250, 350};
+    { //make 2 sharks every 2 seconds 
         
-        for (int i = 0; i < 40; i++) {
-            Projectile p =  new  Projectile();
-            addObject(p, locations[value], 0);
-            if ((System.currentTimeMillis() - startTime)/1000 > 3) {
-                removeObject(p);
-                prepare();
-            }
-        }
+        int create = Greenfoot.getRandomNumber(4);
         
+        for(int i = 0; i<create; i++){
+            Shark shark = new Shark();
+            addObject(shark, Greenfoot.getRandomNumber(400), 0);             
+        }        
+    }
+        
+        
+
+        
+    
+    public void decreaseHealth(){
+        health = health-1;
+    }
+    public void gameOver(){
+        //add transition;
     }
 }

@@ -1,4 +1,3 @@
-// WARNING: This file is auto-generated and any changes to it will be overwritten
 import lang.stride.*;
 import greenfoot.*;
 
@@ -6,7 +5,7 @@ import greenfoot.*;
  * Write a description of class Projectile here.
  * @author (your name) @version (a version number or a date)
  */
-public class Projectile extends Actor
+public class Shark extends Actor
 {
 
     /* (World, Actor, GreenfootImage, Greenfoot and MouseInfo)*/
@@ -27,5 +26,12 @@ public class Projectile extends Actor
     {
         setRotation(90);
         move(4);
+        
+        Actor submarine = getOneIntersectingObject(Submarine.class);
+        if(submarine!=null){
+            MyWorld world = (MyWorld) getWorld();
+            world.decreaseHealth();
+        }
     }
+    
 }
