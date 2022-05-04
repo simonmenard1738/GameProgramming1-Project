@@ -7,8 +7,8 @@ import greenfoot.*;
  */
 public class Level2 extends World
 {
-    MyWorld world = (MyWorld) new MyWorld();
-    int health = world.health;
+    
+    static int health = MyWorld.health;
     int counter = 0;
     /**
      * Constructor for objects of class Level2.
@@ -60,7 +60,7 @@ public class Level2 extends World
     }
     public boolean sharkCounter(){
         
-        if(counter == 60){
+        if(counter == 100){
             return true;
         }
         return false;
@@ -71,5 +71,6 @@ public class Level2 extends World
             Greenfoot.setWorld(world);
         }
     }
+    
 }
 

@@ -26,26 +26,30 @@ public class Submarine extends Actor
             
         }
         hitSub();
+        
     }
     public void hitSub(){
         Actor shark = getOneIntersectingObject(Shark.class);
         
-        if(getWorld()==new MyWorld()){
+        
         if(shark!=null){
-            MyWorld world =(MyWorld) new MyWorld();
+            World world = getWorld();
             world.removeObject(shark);
-            world.health= world.health-1;
-        }
-    }
-        else if(getWorld()==new Level2()){
-            if(shark!=null){
-            Level2 level2 = (Level2) new Level2();
-            level2.removeObject(shark);
-            level2.health= level2.health-1;
-        }
-    }
-    }
+            MyWorld.health = MyWorld.health-1;
+            Level2.health = MyWorld.health;
+            Level3.health = Level2.health;
             
+                       
+        }
+          
+        
+           // if(shark!=null){
+          //  Level2 level2 = (Level2) new Level2();
+           // level2.removeObject(shark);
+        //    level2.health= level2.health-1;
+      //  }
+    }
+    
     }
     
 

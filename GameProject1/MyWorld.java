@@ -43,6 +43,7 @@ public class MyWorld extends World
         transitionGameOverWorld();
         transitionLevel2();
         
+        
     }
 
     /**
@@ -72,14 +73,14 @@ public class MyWorld extends World
     
    
     public void transitionGameOverWorld(){
-        if(health ==0){
+        if(health == 0){
             World world = new GameOverWorld();
             Greenfoot.setWorld(world);
         }
     }
     public boolean sharkCounter(){
         
-        if(counter == 40){
+        if(counter == 60){
             return true;
         }
         return false;
@@ -89,6 +90,9 @@ public class MyWorld extends World
             World world = new Level2();
             Greenfoot.setWorld(world);
         }
+    }
+    public void loseHealth(){
+        health = health-1;
     }
 }
     
