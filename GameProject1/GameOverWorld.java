@@ -34,5 +34,26 @@ public class GameOverWorld extends World
     {
         RestartButton restartButton = new RestartButton();
         addObject(restartButton,200,451);
+        Exit exit = new Exit();
+        addObject(exit,193,388);
+        DeadHeart deadHeart = new DeadHeart();
+        addObject(deadHeart,145,260);
+        DeadHeart deadHeart2 = new DeadHeart();
+        addObject(deadHeart2,189,258);
+        DeadHeart deadHeart3 = new DeadHeart();
+        addObject(deadHeart3,235,258);
+        deadHeart2.setLocation(181,257);
+        deadHeart3.setLocation(234,257);
+        InfoButton infoButton = new InfoButton();
+        addObject(infoButton,190,320);
+        deadHeart2.setLocation(178,255);
+        deadHeart2.setLocation(186,258);
+        deadHeart3.setLocation(236,257);
+        deadHeart2.setLocation(190,255);
+        deadHeart3.setLocation(234,268);
+        deadHeart.setLocation(142,273);
+        deadHeart3.setLocation(239,274);
+        deadHeart3.setLocation(239,279);
+        deadHeart3.setLocation(243,273);
     }
 }

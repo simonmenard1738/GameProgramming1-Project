@@ -14,6 +14,7 @@ public class MyWorld extends World
     // fake code
     double startTime = System.currentTimeMillis();
     int counter=0;
+    int counterWp = 0;
     static int health = 3;
     /**
      * Constructor for objects of class MyWorld.
@@ -31,6 +32,8 @@ public class MyWorld extends World
         //showTime();
         
         showHealth();
+        Exit exit = new Exit();
+        addObject(exit, 300, 50);
         
         Shark shark = new Shark();
         
@@ -40,8 +43,47 @@ public class MyWorld extends World
             addObject(shark,sharkX, sharkY);
             counter=counter+1;
         }
+        
+        Whirlpool wp = new Whirlpool();
+        
+        if(counterWp<6){
+        if(Greenfoot.getRandomNumber(200)<2){
+            int wpX = Greenfoot.getRandomNumber(getWidth());
+            int wpY = Greenfoot.getRandomNumber(50);
+            addObject(wp, wpX, wpY);
+            counterWp++;
+            
+        }
+    }
+    
         transitionGameOverWorld();
         transitionLevel2();
+            Heart heart = new Heart();
+            Heart heart2 = new Heart();
+            Heart heart3 = new Heart();        
+        
+            
+            addObject(heart, 70,80);
+            
+            addObject(heart2, 95,80);
+            
+            addObject(heart3, 120,80);
+        
+        if(health == 2){
+            
+            DeadHeart dh = new DeadHeart();
+            addObject(dh, 120, 80);
+        }
+        if(health == 1){
+            DeadHeart dh = new DeadHeart();
+            addObject(dh, 120, 80);
+            DeadHeart dh2 = new DeadHeart();
+            addObject(dh2, 95, 80);
+            
+            
+        }
+        
+        
         
         
     }
@@ -80,7 +122,7 @@ public class MyWorld extends World
     }
     public boolean sharkCounter(){
         
-        if(counter == 60){
+        if(counter == 20){
             return true;
         }
         return false;

@@ -10,6 +10,7 @@ public class Level2 extends World
     
     static int health = MyWorld.health;
     int counter = 0;
+    int counterWp = 0;
     /**
      * Constructor for objects of class Level2.
      */
@@ -29,7 +30,8 @@ public class Level2 extends World
     }
     public void act(){
         showHealthLevel();
-        
+        Exit exit = new Exit();
+        addObject(exit, 300, 50);
         Shark shark = new Shark();
         shark.x = 6;
         if(Greenfoot.getRandomNumber(100)<2){
@@ -40,8 +42,43 @@ public class Level2 extends World
             counter = counter+1;
             
         }
-        transitionGameOverWorld();
+            Whirlpool wp = new Whirlpool();
+        
+        if(counterWp<6){
+        if(Greenfoot.getRandomNumber(200)<2){
+            int wpX = Greenfoot.getRandomNumber(getWidth());
+            int wpY = Greenfoot.getRandomNumber(50);
+            addObject(wp, wpX, wpY);
+            counterWp++;
+            
+        }
+    }
+        //transitionGameOverWorld();
         transitionLevel3();
+        Heart heart = new Heart();
+            Heart heart2 = new Heart();
+            Heart heart3 = new Heart();        
+        
+            
+            addObject(heart, 70,80);
+            
+            addObject(heart2, 95,80);
+            
+            addObject(heart3, 120,80);
+        
+        if(health == 2){
+            
+            DeadHeart dh = new DeadHeart();
+            addObject(dh, 120, 80);
+        }
+        if(health == 1){
+            DeadHeart dh = new DeadHeart();
+            addObject(dh, 120, 80);
+            DeadHeart dh2 = new DeadHeart();
+            addObject(dh2, 95, 80);
+            
+            
+        }
     }
     public void showHealthLevel(){
         Display display1 = new Display();

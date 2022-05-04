@@ -26,6 +26,7 @@ public class Submarine extends Actor
             
         }
         hitSub();
+        hitWp();
         
     }
     public void hitSub(){
@@ -48,6 +49,14 @@ public class Submarine extends Actor
            // level2.removeObject(shark);
         //    level2.health= level2.health-1;
       //  }
+    }
+    public void hitWp(){
+        Actor wp = getOneIntersectingObject(Whirlpool.class);
+        
+        if(wp!=null){
+            World world = new GameOverWorld();
+            Greenfoot.setWorld(world);
+        }
     }
     
     }

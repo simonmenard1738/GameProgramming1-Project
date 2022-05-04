@@ -13,6 +13,6 @@ public class SplashScreen extends World
      */
     public SplashScreen()
     {
-        super(400, 600, 1);
+        super(400, 445, 1);
     }
 }
