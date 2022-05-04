@@ -22,6 +22,10 @@ public class RestartButton extends Actor
     {
         setImage("restart.png");
     }
-
+     if(Greenfoot.mouseClicked(this)){
+        MyWorld world = new MyWorld();
+        world.health=3;
+        Greenfoot.setWorld(world);
+    }
     }
 }

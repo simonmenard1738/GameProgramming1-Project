@@ -27,23 +27,21 @@ public class MyWorld extends World
         
     }
     
-    public void act(){
-        Display display = new Display();
-        addObject(display,300,50);
-        int timerValue = (int) (System.currentTimeMillis() - startTime)/1000;
-        display.setImage(new GreenfootImage("Timer: " + timerValue , 25, Color.WHITE, Color.BLACK));
+     public void act(){
+        //showTime();
         
-        Display display2 = new Display();
-        addObject(display2,100, 50);
-        display2.setImage(new GreenfootImage("Lives: " + health, 25,Color.WHITE, Color.BLACK));
+        showHealth();
         
         Shark shark = new Shark();
+        
         if(Greenfoot.getRandomNumber(100)<2){
             int sharkX = Greenfoot.getRandomNumber(getWidth());
             int sharkY = Greenfoot.getRandomNumber(50);
             addObject(shark,sharkX, sharkY);
+            counter=counter+1;
         }
-        
+        transitionGameOverWorld();
+        transitionLevel2();
         
     }
 
@@ -59,14 +57,38 @@ public class MyWorld extends World
         
    
     }
-            
-    public void decreaseHealth(){
-        health = health-1;
+    public void showTime(){ //not needed
+        Display display = new Display();
+        addObject(display,300,50);
+        int timerValue = (int) (System.currentTimeMillis() - startTime)/1000;
+        display.setImage(new GreenfootImage("Timer :" + timerValue , 20, Color.WHITE, Color.BLACK));
+        
     }
-    public void gameOver(){
-        //add transition;
+    public void showHealth(){
+        Display display2 = new Display();
+        addObject(display2,100, 50);
+        display2.setImage(new GreenfootImage("Lives: " + health, 20,Color.WHITE, Color.BLACK));
     }
     
+   
+    public void transitionGameOverWorld(){
+        if(health ==0){
+            World world = new GameOverWorld();
+            Greenfoot.setWorld(world);
+        }
+    }
+    public boolean sharkCounter(){
+        
+        if(counter == 40){
+            return true;
+        }
+        return false;
+    }
+    public void transitionLevel2(){
+        if (sharkCounter()==true){
+            World world = new Level2();
+            Greenfoot.setWorld(world);
+        }
+    }
 }
     
-

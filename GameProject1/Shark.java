@@ -9,7 +9,7 @@ public class Shark extends Actor
 {
 
     /* (World, Actor, GreenfootImage, Greenfoot and MouseInfo)*/
-
+    int x = 3;
     /**
      * Act - do whatever the Projectile wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
      */
@@ -27,13 +27,18 @@ public class Shark extends Actor
     public void move()
     {
         setRotation(90);
-        move(3);
+        
+        move(x);
         if(isAtEdge()==true){
             getWorld().removeObject(this);
                        
         }
         
+        
+        
     }
+    
+
     
        }
     
