@@ -32,10 +32,6 @@ public class GameOverWorld extends World
      */
     private void prepare()
     {
-        RestartButton restartButton = new RestartButton();
-        addObject(restartButton,200,451);
-        Exit exit = new Exit();
-        addObject(exit,193,388);
         DeadHeart deadHeart = new DeadHeart();
         addObject(deadHeart,145,260);
         DeadHeart deadHeart2 = new DeadHeart();
@@ -55,5 +51,9 @@ public class GameOverWorld extends World
         deadHeart3.setLocation(239,274);
         deadHeart3.setLocation(239,279);
         deadHeart3.setLocation(243,273);
+        Exit exit = new Exit();
+        addObject(exit,194,414);
+        RestartButton restartButton = new RestartButton();
+        addObject(restartButton,193,473);
     }
 }

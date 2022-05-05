@@ -22,14 +22,11 @@ public class Level3 extends World
     private void prepare(){
         Submarine submarine = new Submarine();
         addObject(submarine,200,570);
-        
-       
-        
+        Exit exit = new Exit();
+        addObject(exit, 300, 50);
      }
     public void act(){
         showHealthLevel();
-        Exit exit = new Exit();
-        addObject(exit, 300, 50);
         Shark shark = new Shark();
         shark.x = 10;
         if(Greenfoot.getRandomNumber(100)<2){
@@ -81,7 +78,7 @@ public class Level3 extends World
     }
     public void showHealthLevel(){
         Display display1 = new Display();
-        addObject(display1, 300, 50);
+        addObject(display1, 200, 50);
         display1.setImage(new GreenfootImage("Level 3",20, Color.WHITE, Color.BLACK));       
         
         Display display2 = new Display();

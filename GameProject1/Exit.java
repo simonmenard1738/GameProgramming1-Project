@@ -13,14 +13,14 @@ public class Exit extends Actor
      */
     public void act()
     {
-        if (Greenfoot.mouseMoved(this))
+    if (Greenfoot.mouseMoved(this))
     {
-        setImage("exit_highlighted.PNG");
+        setImage("exit_highlighted.png");
     }
 
     if (Greenfoot.mouseMoved(getWorld()))
     {
-        setImage("exit.jpg");
+        setImage("exit.PNG");
     }
 
     if (Greenfoot.mouseClicked(this))

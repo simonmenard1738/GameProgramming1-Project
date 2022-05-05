@@ -11,7 +11,7 @@ public class MyWorld extends World
 {
 
     /* (World, Actor, GreenfootImage, Greenfoot and MouseInfo)*/
-    // fake code
+    
     double startTime = System.currentTimeMillis();
     int counter=0;
     int counterWp = 0;
@@ -32,8 +32,6 @@ public class MyWorld extends World
         //showTime();
         
         showHealth();
-        Exit exit = new Exit();
-        addObject(exit, 300, 50);
         
         Shark shark = new Shark();
         
@@ -53,8 +51,8 @@ public class MyWorld extends World
             addObject(wp, wpX, wpY);
             counterWp++;
             
+            }
         }
-    }
     
         transitionGameOverWorld();
         transitionLevel2();
@@ -82,10 +80,7 @@ public class MyWorld extends World
             
             
         }
-        
-        
-        
-        
+
     }
 
     /**
@@ -97,7 +92,10 @@ public class MyWorld extends World
                
         Submarine submarine = new Submarine();
         addObject(submarine,200,570);
-        
+        Exit exit = new Exit();
+        addObject(exit, 300, 50);
+
+
    
     }
     public void showTime(){ //not needed
@@ -108,12 +106,14 @@ public class MyWorld extends World
         
     }
     public void showHealth(){
+        Display display1 = new Display();
+        addObject(display1, 200, 50);
+        display1.setImage(new GreenfootImage("Level 1",20, Color.WHITE, Color.BLACK));     
+        
         Display display2 = new Display();
         addObject(display2,100, 50);
         display2.setImage(new GreenfootImage("Lives: " + health, 20,Color.WHITE, Color.BLACK));
     }
-    
-   
     public void transitionGameOverWorld(){
         if(health == 0){
             World world = new GameOverWorld();
