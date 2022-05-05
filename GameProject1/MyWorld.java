@@ -122,7 +122,7 @@ public class MyWorld extends World
     }
     public boolean sharkCounter(){
         
-        if(counter == 20){
+        if(counter == 30){
             return true;
         }
         return false;

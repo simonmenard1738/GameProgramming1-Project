@@ -93,7 +93,7 @@ public class Level3 extends World
     }
     public boolean sharkCounter(){
         
-        if(counter == 60){
+        if(counter == 50){
             
             return true;
         }

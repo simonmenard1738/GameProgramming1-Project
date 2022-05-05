@@ -50,8 +50,7 @@ public class Level2 extends World
             
         }
     }
-        //transitionGameOverWorld();
-        transitionLevel3();
+        
         Heart heart = new Heart();
             Heart heart2 = new Heart();
             Heart heart3 = new Heart();        
@@ -76,6 +75,8 @@ public class Level2 extends World
             
             
         }
+        transitionGameOverWorld();
+        transitionLevel3();
     }
     public void showHealthLevel(){
         Display display1 = new Display();
@@ -94,7 +95,7 @@ public class Level2 extends World
     }
     public boolean sharkCounter(){
         
-        if(counter == 100){
+        if(counter == 50){
             return true;
         }
         return false;
