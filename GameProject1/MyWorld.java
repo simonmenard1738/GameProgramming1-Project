@@ -2,20 +2,18 @@ import lang.stride.*;
 import greenfoot.*;
 import java.util.*;
 
-
 /**
  * Write a description of class MyWorld here.
  * @author (your name) @version (a version number or a date)
  */
 public class MyWorld extends World
 {
-
-    /* (World, Actor, GreenfootImage, Greenfoot and MouseInfo)*/
-    
+    /* (World, Actor, GreenfootImage, Greenfoot and MouseInfo)*/    
     double startTime = System.currentTimeMillis();
     int counter=0;
     int counterWp = 0;
     static int health = 3;
+    GreenfootSound music = new GreenfootSound("bgmusic.wav");
     /**
      * Constructor for objects of class MyWorld.
      */
@@ -23,9 +21,8 @@ public class MyWorld extends World
     {
         super(400, 600, 1);
         prepare();
-        
         act();
-        
+        music.playLoop();
     }
     
      public void act(){
@@ -67,8 +64,7 @@ public class MyWorld extends World
             
             addObject(heart3, 120,80);
         
-        if(health == 2){
-            
+        if(health == 2){            
             DeadHeart dh = new DeadHeart();
             addObject(dh, 120, 80);
         }
@@ -94,7 +90,8 @@ public class MyWorld extends World
         addObject(submarine,200,570);
         Exit exit = new Exit();
         addObject(exit, 300, 50);
-
+        
+        
 
    
     }
@@ -131,6 +128,7 @@ public class MyWorld extends World
         if (sharkCounter()==true){
             World world = new Level2();
             Greenfoot.setWorld(world);
+            music.stop();
         }
     }
     public void loseHealth(){

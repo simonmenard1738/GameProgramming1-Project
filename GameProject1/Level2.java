@@ -11,6 +11,7 @@ public class Level2 extends World
     static int health = MyWorld.health;
     int counter = 0;
     int counterWp = 0;
+    GreenfootSound music2 = new GreenfootSound("bgmusic2.wav");
     /**
      * Constructor for objects of class Level2.
      */
@@ -19,7 +20,7 @@ public class Level2 extends World
         super(400, 600, 1);
         prepare();
         act();
-        
+        music2.playLoop();
     }
     private void prepare(){
         Submarine submarine = new Submarine();
@@ -104,6 +105,7 @@ public class Level2 extends World
         if (sharkCounter()==true){
             World world = new Level3();
             Greenfoot.setWorld(world);
+            music2.stop();
         }
     }
     

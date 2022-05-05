@@ -7,7 +7,7 @@ import greenfoot.*;
  */
 public class GameOverWorld extends World
 {
-
+    
     /**
      * Constructor for objects of class GameOverWorld.
      */
@@ -24,6 +24,7 @@ public class GameOverWorld extends World
         transitionToWorld(new MyWorld()); 
 
         }*/
+        
     }
     
     /**
