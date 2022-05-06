@@ -16,6 +16,8 @@ public class MyWorld extends World
     int counter=0;
     int counterWp = 0;
     static int health = 3;
+    static GreenfootSound music = new GreenfootSound("bgmusic1.mp3");
+    public boolean playingLevel = true;
     /**
      * Constructor for objects of class MyWorld.
      */
@@ -80,7 +82,14 @@ public class MyWorld extends World
             
             
         }
-
+        //sound code
+            GameWonWorld.stoppedWin();
+            StartScreen.stopped5();
+            GameOverWorld.stopped4();
+            Level2.stopped2();
+            Level3.stopped3();
+            music.playLoop();
+        
     }
 
     /**
@@ -118,6 +127,7 @@ public class MyWorld extends World
         if(health == 0){
             World world = new GameOverWorld();
             Greenfoot.setWorld(world);
+            playingLevel = false;
         }
     }
     public boolean sharkCounter(){
@@ -131,10 +141,18 @@ public class MyWorld extends World
         if (sharkCounter()==true){
             World world = new Level2();
             Greenfoot.setWorld(world);
+            playingLevel = false;
         }
     }
     public void loseHealth(){
         health = health-1;
     }
+    public static void started1(){
+        music.playLoop();
+    }
+    public static void stopped1(){
+        music.stop();
+    }
+    
 }
     

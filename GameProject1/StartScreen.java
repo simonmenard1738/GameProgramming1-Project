@@ -8,6 +8,7 @@ import greenfoot.*;
 public class StartScreen extends World
 {
 long startTime = System.currentTimeMillis();
+static GreenfootSound music5 = new GreenfootSound("title.mp3");
     /**
      * Constructor for objects of class StartScreen.
      */
@@ -32,5 +33,13 @@ long startTime = System.currentTimeMillis();
         addObject(startButton,199,479);
         InfoButton infoButton = new InfoButton();
         addObject(infoButton,349,49);
+    }
+    public void act(){
+        GameOverWorld.stopped4();
+        GameWonWorld.stoppedWin();
+        music5.playLoop();
+    }
+    public static void stopped5(){
+        music5.stop();
     }
 }

@@ -10,6 +10,7 @@ public class Level3 extends World
     static int health = Level2.health;
     int counter = 0;
     int counterWp = 0;
+    static GreenfootSound music3 = new GreenfootSound("bgmusic3.mp3");
     /**
      * Constructor for objects of class Level3.
      */
@@ -24,6 +25,7 @@ public class Level3 extends World
         addObject(submarine,200,570);
         Exit exit = new Exit();
         addObject(exit, 300, 50);
+        
      }
     public void act(){
         showHealthLevel();
@@ -74,7 +76,9 @@ public class Level3 extends World
             
             
         }
-        
+            GameOverWorld.stopped4();
+            Level2.stopped2();
+            music3.playLoop();
     }
     public void showHealthLevel(){
         Display display1 = new Display();
@@ -89,6 +93,7 @@ public class Level3 extends World
         if(health ==0){
             World world = new GameOverWorld();
             Greenfoot.setWorld(world);
+            
      }
     }
     public boolean sharkCounter(){
@@ -105,6 +110,11 @@ public class Level3 extends World
             Greenfoot.setWorld(world);
         }
     }
-    
+    public static void started3(){
+        music3.playLoop();
+    }
+    public static void stopped3(){
+        music3.stop();
+    }
     
 }

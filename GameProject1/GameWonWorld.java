@@ -7,14 +7,18 @@ import greenfoot.*;
  */
 public class GameWonWorld extends World
 {
-
+    static GreenfootSound musicWin = new GreenfootSound("gamewin.mp3");
     /**
      * Constructor for objects of class GameWonWorld.
      */
     public GameWonWorld()
     {
+        
         super(400, 600, 1);
+        
         prepare();
+        act();
+        
     }
     
     /**
@@ -35,5 +39,14 @@ public class GameWonWorld extends World
         addObject(heart2,189,378);
         Heart heart3 = new Heart();
         addObject(heart3,245,378);
+    }
+    public void act(){
+        MyWorld.stopped1();
+        Level2.stopped2();
+        Level3.stopped3();
+        musicWin.playLoop();
+    }
+    public static void stoppedWin(){
+        musicWin.stop();
     }
 }

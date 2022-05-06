@@ -7,7 +7,7 @@ import greenfoot.*;
  */
 public class GameOverWorld extends World
 {
-
+    static GreenfootSound music4 = new GreenfootSound("gameovermusic.mp3");
     /**
      * Constructor for objects of class GameOverWorld.
      */
@@ -15,6 +15,7 @@ public class GameOverWorld extends World
     {
         super(400, 600, 1);
         prepare();
+        act();
     }
 
     public void act()
@@ -22,8 +23,12 @@ public class GameOverWorld extends World
         /*if (Greenfoot.isKeyDown("space"))
         {
         transitionToWorld(new MyWorld()); 
-
+        
         }*/
+        MyWorld.stopped1();
+        Level2.stopped2();
+        Level3.stopped3();
+        music4.playLoop();
     }
     
     /**
@@ -55,5 +60,8 @@ public class GameOverWorld extends World
         addObject(exit,194,414);
         RestartButton restartButton = new RestartButton();
         addObject(restartButton,193,473);
+    }
+    public static void stopped4(){
+        music4.stop();
     }
 }
