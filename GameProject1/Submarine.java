@@ -39,7 +39,7 @@ public class Submarine extends Actor
             MyWorld.health = MyWorld.health-1;
             Level2.health = MyWorld.health;
             Level3.health = Level2.health;
-            Greenfoot.playSound("damage.mp3");
+            Greenfoot.playSound("damage.wav");
                        
         }
           
@@ -56,7 +56,7 @@ public class Submarine extends Actor
         if(wp!=null){
             World world = new GameOverWorld();
             Greenfoot.setWorld(world);
-            Greenfoot.playSound("wpdamage.mp3");
+            Greenfoot.playSound("wpdamage.wav");
         }
     }
     

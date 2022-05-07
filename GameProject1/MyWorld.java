@@ -11,12 +11,10 @@ public class MyWorld extends World
 {
 
     /* (World, Actor, GreenfootImage, Greenfoot and MouseInfo)*/
-    
-    double startTime = System.currentTimeMillis();
     int counter=0;
     int counterWp = 0;
     static int health = 3;
-    static GreenfootSound music = new GreenfootSound("bgmusic1.mp3");
+    static GreenfootSound music = new GreenfootSound("bgmusic1.wav");
     public boolean playingLevel = true;
     /**
      * Constructor for objects of class MyWorld.
@@ -100,20 +98,14 @@ public class MyWorld extends World
     { //make 2 sharks every 2 seconds , timer in act()
                
         Submarine submarine = new Submarine();
-        addObject(submarine,200,570);
+        addObject(submarine,200,560);
         Exit exit = new Exit();
         addObject(exit, 300, 50);
 
 
    
     }
-    public void showTime(){ //not needed
-        Display display = new Display();
-        addObject(display,300,50);
-        int timerValue = (int) (System.currentTimeMillis() - startTime)/1000;
-        display.setImage(new GreenfootImage("Timer :" + timerValue , 20, Color.WHITE, Color.BLACK));
-        
-    }
+
     public void showHealth(){
         Display display1 = new Display();
         addObject(display1, 200, 50);

@@ -8,7 +8,7 @@ import greenfoot.*;
 public class StartScreen extends World
 {
 long startTime = System.currentTimeMillis();
-static GreenfootSound music5 = new GreenfootSound("title.mp3");
+static GreenfootSound music5 = new GreenfootSound("title.wav");
     /**
      * Constructor for objects of class StartScreen.
      */

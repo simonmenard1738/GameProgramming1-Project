@@ -11,7 +11,7 @@ public class Level2 extends World
     static int health = MyWorld.health;
     int counter = 0;
     int counterWp = 0;
-    static GreenfootSound music2 = new GreenfootSound("bgmusic2.mp3");
+    static GreenfootSound music2 = new GreenfootSound("bgmusic2.wav");
     /**
      * Constructor for objects of class Level2.
      */
@@ -24,7 +24,7 @@ public class Level2 extends World
     }
     private void prepare(){
         Submarine submarine = new Submarine();
-        addObject(submarine,200,570);
+        addObject(submarine,200,560);
         Exit exit = new Exit();
         addObject(exit, 300, 50);
     }

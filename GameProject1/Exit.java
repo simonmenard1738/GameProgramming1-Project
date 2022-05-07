@@ -20,7 +20,7 @@ public class Exit extends Actor
 
     if (Greenfoot.mouseMoved(getWorld()))
     {
-        setImage("exit.PNG");
+        setImage("exit.png");
     }
 
     if (Greenfoot.mouseClicked(this))

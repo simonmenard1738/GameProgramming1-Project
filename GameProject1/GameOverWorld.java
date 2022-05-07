@@ -28,7 +28,7 @@ public class GameOverWorld extends World
         MyWorld.stopped1();
         Level2.stopped2();
         Level3.stopped3();
-        music4.playLoop();
+        music4.playLoop(); 
     }
     
     /**
@@ -57,10 +57,13 @@ public class GameOverWorld extends World
         deadHeart3.setLocation(239,279);
         deadHeart3.setLocation(243,273);
         Exit exit = new Exit();
-        addObject(exit,194,414);
+        addObject(exit,195,415);
         RestartButton restartButton = new RestartButton();
-        addObject(restartButton,193,473);
+        addObject(restartButton,195,475);
     }
+
+ 
+    
     public static void stopped4(){
         music4.stop();
     }
