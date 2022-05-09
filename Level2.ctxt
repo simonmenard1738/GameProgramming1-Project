@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.target=Level2
+comment0.text=\r\n\ \r\n
+comment1.params=
+comment1.target=Level2()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Level2.\r\n
+comment2.params=
+comment2.target=void\ prepare()
+comment3.params=
+comment3.target=void\ act()
+comment4.params=
+comment4.target=void\ showHealthLevel()
+comment5.params=
+comment5.target=void\ transitionGameOverWorld()
+comment6.params=
+comment6.target=boolean\ sharkCounter()
+comment7.params=
+comment7.target=void\ transitionLevel3()
+comment8.params=
+comment8.target=void\ started2()
+comment9.params=
+comment9.target=void\ stopped2()
+numComments=10
