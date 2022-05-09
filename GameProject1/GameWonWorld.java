@@ -15,7 +15,6 @@ public class GameWonWorld extends World
     {
         
         super(400, 600, 1);
-        
         prepare();
         act();
         
@@ -30,15 +29,15 @@ public class GameWonWorld extends World
         InfoButton infoButton = new InfoButton();
         addObject(infoButton,328,108);
         RestartButton restartButton = new RestartButton();
-        addObject(restartButton,199,265);
+        addObject(restartButton,195,265);
         Exit exit = new Exit();
-        addObject(exit,197,317);
-        Heart heart = new Heart();
-        addObject(heart,138,378);
+        addObject(exit,195,317);
+        Heart heart = new Heart(); 
+        addObject(heart,145,365);
         Heart heart2 = new Heart();
-        addObject(heart2,189,378);
+        addObject(heart2,195,365);
         Heart heart3 = new Heart();
-        addObject(heart3,245,378);
+        addObject(heart3,245,365);
     }
     public void act(){
         MyWorld.stopped1();

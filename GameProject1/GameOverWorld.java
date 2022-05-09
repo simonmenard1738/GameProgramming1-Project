@@ -38,31 +38,18 @@ public class GameOverWorld extends World
     private void prepare()
     {
         DeadHeart deadHeart = new DeadHeart();
-        addObject(deadHeart,145,260);
+        addObject(deadHeart,145,275);
         DeadHeart deadHeart2 = new DeadHeart();
-        addObject(deadHeart2,189,258);
+        addObject(deadHeart2,195,255);
         DeadHeart deadHeart3 = new DeadHeart();
-        addObject(deadHeart3,235,258);
-        deadHeart2.setLocation(181,257);
-        deadHeart3.setLocation(234,257);
+        addObject(deadHeart3,245,275);
         InfoButton infoButton = new InfoButton();
-        addObject(infoButton,190,320);
-        deadHeart2.setLocation(178,255);
-        deadHeart2.setLocation(186,258);
-        deadHeart3.setLocation(236,257);
-        deadHeart2.setLocation(190,255);
-        deadHeart3.setLocation(234,268);
-        deadHeart.setLocation(142,273);
-        deadHeart3.setLocation(239,274);
-        deadHeart3.setLocation(239,279);
-        deadHeart3.setLocation(243,273);
+        addObject(infoButton,195,320);
         Exit exit = new Exit();
         addObject(exit,195,415);
         RestartButton restartButton = new RestartButton();
         addObject(restartButton,195,475);
     }
-
- 
     
     public static void stopped4(){
         music4.stop();

@@ -24,7 +24,7 @@ public class Level3 extends World
         Submarine submarine = new Submarine();
         addObject(submarine,200,560);
         Exit exit = new Exit();
-        addObject(exit, 300, 50);
+        addObject(exit, 330, 50);
         
      }
     public void act(){
@@ -48,46 +48,41 @@ public class Level3 extends World
             addObject(wp, wpX, wpY);
             counterWp++;
             
+            }
         }
-    }
-        transitionGameOverWorld();
-        transitionGameWon();
-        Heart heart = new Heart();
+            Heart heart = new Heart();
+            addObject(heart, 40,50);
             Heart heart2 = new Heart();
+            addObject(heart2, 85,50);
             Heart heart3 = new Heart();        
-        
-            
-            addObject(heart, 70,80);
-            
-            addObject(heart2, 95,80);
-            
-            addObject(heart3, 120,80);
+            addObject(heart3, 130,50);
         
         if(health == 2){
             
             DeadHeart dh = new DeadHeart();
-            addObject(dh, 120, 80);
+            addObject(dh, 130, 50);
         }
         if(health == 1){
             DeadHeart dh = new DeadHeart();
-            addObject(dh, 120, 80);
+            addObject(dh, 130, 50);
             DeadHeart dh2 = new DeadHeart();
-            addObject(dh2, 95, 80);
-            
-            
+            addObject(dh2, 85, 50);
         }
+        transitionGameOverWorld();
+        transitionGameWon();
+        
             GameOverWorld.stopped4();
             Level2.stopped2();
             music3.playLoop();
     }
     public void showHealthLevel(){
         Display display1 = new Display();
-        addObject(display1, 200, 50);
-        display1.setImage(new GreenfootImage("Level 3",20, Color.WHITE, Color.BLACK));       
+        addObject(display1, 215, 50);
+        display1.setImage(new GreenfootImage("Level 3",30, Color.WHITE, Color.BLACK));      
         
-        Display display2 = new Display();
+        /*Display display2 = new Display();
         addObject(display2,100, 50);
-        display2.setImage(new GreenfootImage("Lives: " + health, 20,Color.WHITE, Color.BLACK));
+        display2.setImage(new GreenfootImage("Lives: " + health, 20,Color.WHITE, Color.BLACK));*/
     }
     public void transitionGameOverWorld(){
         if(health ==0){
@@ -98,7 +93,7 @@ public class Level3 extends World
     }
     public boolean sharkCounter(){
         
-        if(counter == 50){
+        if(counter == 30){
             
             return true;
         }

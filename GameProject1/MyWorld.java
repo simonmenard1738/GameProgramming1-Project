@@ -23,21 +23,17 @@ public class MyWorld extends World
     {
         super(400, 600, 1);
         prepare();
-        
         act();
-        
     }
     
      public void act(){
-        //showTime();
-        
         showHealth();
-        
         Shark shark = new Shark();
         
-        if(Greenfoot.getRandomNumber(100)<2){
+        if(Greenfoot.getRandomNumber(100)<2)
+        {
             int sharkX = Greenfoot.getRandomNumber(getWidth());
-            int sharkY = Greenfoot.getRandomNumber(50);
+            int sharkY = Greenfoot.getRandomNumber(10);
             addObject(shark,sharkX, sharkY);
             counter=counter+1;
         }
@@ -47,39 +43,31 @@ public class MyWorld extends World
         if(counterWp<6){
         if(Greenfoot.getRandomNumber(200)<2){
             int wpX = Greenfoot.getRandomNumber(getWidth());
-            int wpY = Greenfoot.getRandomNumber(50);
+            int wpY = Greenfoot.getRandomNumber(5);
             addObject(wp, wpX, wpY);
             counterWp++;
-            
             }
         }
-    
-        transitionGameOverWorld();
-        transitionLevel2();
             Heart heart = new Heart();
+            addObject(heart, 40,50);
             Heart heart2 = new Heart();
+            addObject(heart2, 85,50);
             Heart heart3 = new Heart();        
-        
-            
-            addObject(heart, 70,80);
-            
-            addObject(heart2, 95,80);
-            
-            addObject(heart3, 120,80);
+            addObject(heart3, 130,50);
         
         if(health == 2){
             
             DeadHeart dh = new DeadHeart();
-            addObject(dh, 120, 80);
+            addObject(dh, 130, 50);
         }
         if(health == 1){
             DeadHeart dh = new DeadHeart();
-            addObject(dh, 120, 80);
+            addObject(dh, 130, 50);
             DeadHeart dh2 = new DeadHeart();
-            addObject(dh2, 95, 80);
-            
-            
+            addObject(dh2, 85, 50);
         }
+        transitionGameOverWorld();
+        transitionLevel2();
         //sound code
             GameWonWorld.stoppedWin();
             StartScreen.stopped5();
@@ -95,26 +83,23 @@ public class MyWorld extends World
      * That is: create the initial objects and add them to the world.
      */
     private void prepare()
-    { //make 2 sharks every 2 seconds , timer in act()
-               
+    {      
         Submarine submarine = new Submarine();
         addObject(submarine,200,560);
         Exit exit = new Exit();
-        addObject(exit, 300, 50);
-
-
-   
+        addObject(exit, 330, 50);
     }
 
     public void showHealth(){
         Display display1 = new Display();
-        addObject(display1, 200, 50);
-        display1.setImage(new GreenfootImage("Level 1",20, Color.WHITE, Color.BLACK));     
+        addObject(display1, 215, 50);
+        display1.setImage(new GreenfootImage("Level 1",30, Color.WHITE, Color.BLACK));     
         
-        Display display2 = new Display();
+        /*Display display2 = new Display();
         addObject(display2,100, 50);
-        display2.setImage(new GreenfootImage("Lives: " + health, 20,Color.WHITE, Color.BLACK));
+        display2.setImage(new GreenfootImage("Lives: " + health, 25,Color.WHITE, Color.BLACK));*/
     }
+    
     public void transitionGameOverWorld(){
         if(health == 0){
             World world = new GameOverWorld();
@@ -122,13 +107,14 @@ public class MyWorld extends World
             playingLevel = false;
         }
     }
+    
     public boolean sharkCounter(){
-        
-        if(counter == 30){
+        if(counter == 10){
             return true;
         }
         return false;
     }
+    
     public void transitionLevel2(){
         if (sharkCounter()==true){
             World world = new Level2();
@@ -136,15 +122,17 @@ public class MyWorld extends World
             playingLevel = false;
         }
     }
+    
     public void loseHealth(){
         health = health-1;
     }
+    
     public static void started1(){
         music.playLoop();
     }
+    
     public static void stopped1(){
         music.stop();
     }
-    
 }
     

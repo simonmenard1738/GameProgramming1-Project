@@ -17,12 +17,12 @@ public class Submarine extends Actor
     {
         if(Greenfoot.isKeyDown("left"))
         {
-            move(-3);
+            move(-5);
             
         }
         else if(Greenfoot.isKeyDown("right"))
         {
-            move(3);
+            move(5);
             
         }
         hitSub();
@@ -40,15 +40,7 @@ public class Submarine extends Actor
             Level2.health = MyWorld.health;
             Level3.health = Level2.health;
             Greenfoot.playSound("damage.wav");
-                       
         }
-          
-        
-           // if(shark!=null){
-          //  Level2 level2 = (Level2) new Level2();
-           // level2.removeObject(shark);
-        //    level2.health= level2.health-1;
-      //  }
     }
     public void hitWp(){
         Actor wp = getOneIntersectingObject(Whirlpool.class);
